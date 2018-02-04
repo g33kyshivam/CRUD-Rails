@@ -18,7 +18,17 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
         @article.delete
         redirect_to action: 'index'           
-        
+    end
+
+    def edit
+        @article = Article.find(params[:id])
+    end
+
+    def update
+        @article = Article.find(params[:id])
+        @article.update(article_params)
+        @article.save
+        redirect_to action: 'index'
     end
 
     private

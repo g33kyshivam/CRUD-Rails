@@ -3,4 +3,6 @@
 	<h4>AUTHOR: <%= @article.author %></h5>
 	<p><%= @article.content %></p>
 </div>
+<%= link_to 'EDIT', edit_article_path(@article)%>
+
 <%= link_to 'DELETE', article_path(@article),  method: :delete, data: { confirm: "Are you sure?" }   %>
