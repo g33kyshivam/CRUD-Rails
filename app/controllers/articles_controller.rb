@@ -6,8 +6,12 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
     def create
-        @article = Article.create(article_params)
-        redirect_to action: 'index'
+        @article = Article.new(article_params)
+        if @article.save
+            redirect_to action: 'index'
+        else
+          render :new
+        end
     end
 
     def show
@@ -27,8 +31,11 @@ class ArticlesController < ApplicationController
     def update
         @article = Article.find(params[:id])
         @article.update(article_params)
-        @article.save
-        redirect_to action: 'index'
+        if @article.save
+            redirect_to action: 'index'
+        else
+            render :edit
+        end
     end
 
     private
