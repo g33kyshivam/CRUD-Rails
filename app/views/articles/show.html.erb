@@ -3,3 +3,4 @@
 	<h4>AUTHOR: <%= @article.author %></h5>
 	<p><%= @article.content %></p>
 </div>
+<%= link_to 'DELETE', article_path(@article),  method: :delete, data: { confirm: "Are you sure?" }   %>

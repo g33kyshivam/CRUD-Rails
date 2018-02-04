@@ -14,6 +14,13 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
 
+    def destroy
+        @article = Article.find(params[:id])
+        @article.delete
+        redirect_to action: 'index'           
+        
+    end
+
     private
     def article_params
         params.require(:article).permit(:author, :content, :title)
