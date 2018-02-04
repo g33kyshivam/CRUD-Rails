@@ -1,17 +1,2 @@
-<%=form_for @article do |f|%>
-    <p>
-        <%= f.label :title%>
-        <%= f.text_field :title,autofocus: true%>
-    </p>
-    <p>
-        <%= f.label :author%>
-        <%= f.text_field :author%>
-    </p>
-    <br>
-    <p>
-        <%= f.label :content%>
-        <%= f.text_field :content, size: "60x12"%>
-    </p>
-    <br>
-    <%= f.submit%>
-<% end %>
+<%# Partial being rendered %>
+<%= render 'articles/form' %>
