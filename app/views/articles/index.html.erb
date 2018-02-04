@@ -1,8 +1,13 @@
 <h3>Welcome to my CRUD-APP</h3>
-<br>
-<%= link_to 'ADD', new_article_path %>
-<br>
+<p>
+<%= link_to 'Add Article', new_article_path %>
+</p>
+<h4>List of Article</h4>
 <%@article.each do |f|%>
-    <%=f.author%>
+    <div>
+        <%= f.title %>
+        <%= link_to "Show", article_path(f)%>
+
+    </div>
     <br>
 <% end %>
